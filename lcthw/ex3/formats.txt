@@ -1,0 +1,3 @@
+%s - prints a null terminated string. (If used with no parameters, will print every byte until a zero is found, whether it's a character or not.)
+%d - prints a signed decimal.
+%n - stores the number of printed characters into an int pointer provided. (Extremely dangerous, as it can be used to overwrite a return address or other memory address maliciously.)
