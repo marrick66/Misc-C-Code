@@ -129,7 +129,10 @@ Disassembly of section .text:
   40054a:	bf f4 05 40 00       	mov    edi,0x4005f4							#Per x64 calling convention, the first parameter is passed
 																				#in rsi.  Since we don't do that, the %d format will read
 																				#whatever 32 bit value that is in rsi (meaning esi).
-																				#The question is, how does it know how many parameters it has?
+																				#depending on the number of formats in the string, it should
+																				#cycle through the registers in the calling convention,
+																				#then proceed to use the stack from then on.  
+																					
   40054f:	b8 00 00 00 00       	mov    eax,0x0
   400554:	e8 b7 fe ff ff       	call   400410 <printf@plt>
   400559:	bf 08 06 40 00       	mov    edi,0x400608
