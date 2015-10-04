@@ -1,3 +1,3 @@
 CC=gcc
-CFLAGS=-m32 -W -Wall -pedantic -std=c99
-LDFLAGS=-m32
+CFLAGS=-m64 -W -Wall -pedantic -std=c99
+LDFLAGS=-m64
