@@ -172,17 +172,22 @@ Disassembly of section .text:
  804848b:	01 d0                	add    eax,edx
  804848d:	0f b6 00             	movzx  eax,BYTE PTR [eax]
  8048490:	88 44 24 1b          	mov    BYTE PTR [esp+0x1b],al
- 8048494:	0f be 44 24 1b       	movsx  eax,BYTE PTR [esp+0x1b]		#At this point, the character at argv[1][i] is loaded into
-																		#eax.
- 8048499:	83 e8 41             	sub    eax,0x41
-																		#It's then normalized to an index of an offset by subtracting the first letter
-																		#'A' from it. It skips the character if it's not in the range of the cases.
+ 8048494:	0f be 44 24 1b       	movsx  eax,BYTE PTR [esp+0x1b]		#At this point, the character at argv[1][i]
+										# is loaded into eax.			
+8048499:	83 e8 41             	sub    eax,0x41				#It's then normalized to an index of an 
+										#offset by subtracting the first letter
+										#'A' from it. It skips the character if
+										#it's  not in the range of the cases.
  804849c:	83 f8 38             	cmp    eax,0x38
  804849f:	0f 87 99 00 00 00    	ja     804853e <main+0xf1>
- 80484a5:	8b 04 85 78 86 04 08 	mov    eax,DWORD PTR [eax*4+0x8048678]	#The index from the found character is used to query the jump table
-																			#at 0x8048678 to get the address to jump to. Debugging indicates that
-																			#the jump table is the size of the range of characters A-Za-z, with 
-																			#all consonants having the same entry pointing to the default case address. 
+ 80484a5:	8b 04 85 78 86 04 08 	mov    eax,DWORD PTR [eax*4+0x8048678]	#The index from the found character is 
+										#used to query the jump table
+										#at 0x8048678 to get the address to 
+										#jump to. Debugging indicates that 
+										#the jump table is the size of the 
+										#range of characters A-Za-z, with 
+										#all consonants having the same entry 
+										#pointing to the default case address. 
  80484ac:	ff e0                	jmp    eax
  80484ae:	8b 44 24 1c          	mov    eax,DWORD PTR [esp+0x1c]
  80484b2:	89 44 24 04          	mov    DWORD PTR [esp+0x4],eax
