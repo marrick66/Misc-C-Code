@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
   char *other_name = "Sean";
   
-  printf("Other name each: %c %c %c %c %c\n", other_name[0], other_name[1], other_name[2], other_name[3]);
+  printf("Other name each: %c %c %c %c \n", other_name[0], other_name[1], other_name[2], other_name[3]);
   printf("Other name: %s\n", other_name);
 
   return 0;

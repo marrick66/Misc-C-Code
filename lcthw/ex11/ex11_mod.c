@@ -28,6 +28,9 @@ int main(int argc, char *argv[])
 
   char *other_name = "Sean";	//A string literal will point to a read only memory location, so
 				//attempting to assign a character to an array element should segfault.
+				//The pointer itself is on the stack, but the data it points to isn't.
+				//If this were an array, all of the characters would be located on the stack,
+				//in writeable memory.
 
   other_name[0] = 'B';
   
