@@ -7,6 +7,8 @@ int main(int argc, char *argv[])
 	char full_name[] = 
 	{ 'S', 'e', 'a', 'n', ' ', 'M', 'a', 'y', 'f','i', 'e', 'l', 'd'}; //Even in this form, the compiler seems to add a null terminator.
 
+	//NOTE: this is compiler dependent.  With gcc on OSX, it does not add a null terminator, so when printing it continues past the end
+	//of the array.
 	full_name[13] = 'A'; //We attempt to change the null character, to break printing the format string.
 
 	//Warning: On some systems you may have to change %ld
