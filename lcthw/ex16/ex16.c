@@ -13,8 +13,14 @@ struct Person
 
 struct Person *PersonCreate(char *name, int age, int height, int weight)
 {
-	struct Person *who = malloc(sizeof(struct Person)); //dynamically allocate memory from the heap. It returns a void pointer, which
-														//can be assigned to any pointer type without being cast.
+	//Allocates memory from the heap for the struct, and returns a 
+	//void pointer, which can be assigned to any pointer type without casting.
+	struct Person *who = malloc(sizeof(struct Person));
+
+	//Assertions are used for debugging, and will
+	//terminate the program if the boolean expression is false.
+	//If the program is not compiled with the debug flag, assertions
+	//will not be evaluated.														
 	assert(who != NULL);
 
 	who->name = strdup(name);
