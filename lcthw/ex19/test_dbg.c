@@ -4,9 +4,6 @@
 int main(int argc, char *argv[])
 {
 	int valid = 0;
-
-	check_debug(valid, "Passed");
-	printf("Test here.");
-error:
+	debug("You shouldn't see this.\n");
 	return 0;
 }
