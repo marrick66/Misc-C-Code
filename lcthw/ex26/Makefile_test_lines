@@ -1,0 +1,13 @@
+INC_DIR=../common
+CC=gcc
+CFLAGS=-m32 -g -W -Wall -pedantic -std=c99 -I$(INC_DIR)
+LDFLAGS=-m32
+
+test_lines: test_lines.o lines.o
+	$(CC) $(LDFLAGS) -o test_lines test_lines.o lines.o
+
+test_lines.o: test_lines.c
+	$(CC) $(CFLAGS) -c test_lines.c
+
+lines.o: lines.c
+	$(CC) $(CFLAGS) -c lines.c
