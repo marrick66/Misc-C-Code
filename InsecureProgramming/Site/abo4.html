@@ -1,0 +1,40 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>Advanced Buffer Overflow #4</b></center>
+<br>
+oh pointers, pointers!<p>
+<font size=-1>
+Do you remember when you had problems with * and &? everybody has that kind of
+problems at least once when learning C, what about poiners to pointers? let's
+see...
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=abo4.c>abo4.c</a>                                           *
+ * specially crafted to feed your brain by gera     */
+
+/* After this one, the next is just an Eureka! away */
+
+extern system,puts; 
+void (*fn)(char*)=(void(*)(char*))&system;
+
+int main(int argv,char **argc) {
+	char *pbuf=malloc(strlen(argc[2])+1);
+	char buf[256];
+
+	fn=(void(*)(char*))&puts;
+	strcpy(buf,argc[1]);
+	strcpy(pbuf,argc[2]);
+	fn(argc[3]);
+	while(1);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=abo3.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=abo5.html>Next</A>}</font></td></tr></font></table>
+</body>

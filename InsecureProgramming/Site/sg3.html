@@ -1,0 +1,35 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>StackGuarded #3</b></center>
+<br>
+<p>
+<font size=-1>
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=sg3.c>sg3.c</a>                                        *
+ * specially crafted to feed your brain by gera */
+
+char *read_it(char *msg) {
+    char buf[128];
+    int count;
+
+    buf[read(0,buf,sizeof buf)]=0;
+    return strdup(buf);
+}
+
+int main(int argv, char **argc) {
+    char *msg = malloc(1000);
+
+    snprintf(msg,1000,"User: %s",read_it(msg));
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=sg2.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=sg4.html><u>Next</u></a>}</font></td></tr></font></table>
+</body>

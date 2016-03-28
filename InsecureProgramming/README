@@ -1,7 +1,9 @@
-These are old exercises, so we need to turn off ASLR and stack protection:
+These are my local archive of insecure programming exercises from http://community.coresecurity.com/~gera/InsecureProgramming/
+
+I've included a download of the site from the wayback machine, since it no longer exists. These are old exercises, so we need to compile them without modern stack protections:
 
 Turn off ASLR (from shell): echo 0 > /proc/sys/kernel/randomize_va_space
-
 Turn off stack protection (using gcc): compile with -fno-stack-protector 
-
 Turn off non-executable stack (post compile): execstack -s /path/to/bin
+
+I've separated my notes and solutions into another subdirectory to keep the exercises pure. For transparency's sake, these notes are unedited, so you can see all the messy dead ends and thought processes I've gone through.

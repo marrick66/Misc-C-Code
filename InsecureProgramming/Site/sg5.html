@@ -1,0 +1,43 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>StackGuarded #5</b></center>
+<br>
+<p>
+<font size=-1>
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=sg5.c>sg5.c</a>                                        *
+ * specially crafted to feed your brain by gera */
+
+int need_to_check = 1;	// XXX: Add global configuration
+
+// XXX: Add real encryption here
+#define decrypt(dest,src)     strcpy(dest,src)  
+
+int check(char *user) {
+        char temp[80];
+
+        decrypt(temp,user);
+	
+        // XXX: add some real checks in the future
+        return !strcmp(temp,"gera");
+}
+
+int main(int argv, char **argc) {
+    int user_ok;
+
+    user_ok = check(argc[1]);
+    if (!user_ok && need_to_check) exit(1);
+    exit(0);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=sg4.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=sg6.html><u>Next</u></a>}</font></td></tr></font></table>
+</body>

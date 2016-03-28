@@ -1,0 +1,33 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>Advanced Buffer Overflow #8</b></center>
+<br>
+Don't stay static<p>
+<font size=-1>
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=abo8.c>abo8.c</a>                                       *
+ * specially crafted to feed your brain by gera */
+
+/* spot the difference */
+
+
+
+char buf[256];
+
+int main(int argv,char **argc) {
+	strcpy(buf,argc[1]);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+From the top of your head, what do you think is generally more safe, a program
+dynamically linked to its libraries or one statically linked to them? Now go and try it out!
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=abo7.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=abo9.html>Next</A>}</font></td></tr></font></table>
+</body>

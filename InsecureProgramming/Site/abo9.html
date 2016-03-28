@@ -1,0 +1,34 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>Advanced Buffer Overflow #9</b></center>
+<br>
+<p>
+<font size=-1>
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=abo9.c>abo9.c</a>                                       *
+ * specially crafted to feed your brain by gera */
+
+/* free(your mind) */
+
+/* I'm not sure in what operating systems it can be done */
+
+int main(int argv,char **argc) {
+	char *pbuf1=(char*)malloc(256);
+	char *pbuf2=(char*)malloc(256);
+
+	gets(pbuf1);
+	free(pbuf2);
+	free(pbuf1);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=abo8.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=abo10.html>Next</A>}</font></td></tr></font></table>
+</body>

@@ -1,0 +1,54 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>Advanced Buffer Overflow #1</b></center>
+<br>
+blind obedience <p>
+<font size=-1>
+What would happen if you store 512 characters where there is only space for 256?
+You may claim that you can't, and you'll be right, but still, there are
+situations that, unconsciously, you tell the micro to do so, and  he can only
+but obey you... and he'll do his best without thinking of side effects. Now is
+when we get technical, fasten your seat belts, this turbulence will last
+forever.<p>
+What defines a <i>buffer overflow</i> is the copy of a memory region into
+another region not big enough to contain it.
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=abo1.c>abo1.c</a>                                       *
+ * specially crafted to feed your brain by gera */
+
+/* Dumb example to let you get introduced...    */
+
+int main(int argv,char **argc) {
+	char buf[256];
+
+	strcpy(buf,argc[1]);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+This is a good and simple abo: on execution this program will copy the
+contents of <code>argc[1]</code><sup>1</sup>, whatever it is, into the reserved
+256 bytes named <code>buf</code>, <code>strcpy()</code> will not do any checks
+of any kind, it will just copy bytes from source to destination, from <code>
+argc[1]</code> to <code>buf</code>, until it finds a zero. Here, a chance is
+given for us to supply a longer-than-expected <code>argc[1]</code> to write in
+memory past the end of the reserved space named <code>buf</code>. Why is this
+a security problem? becouse we can change data that we shouldn't be able to,
+and usually, this data we can change has a very special meaning for the micro,
+and by exploiting this meaning, we can confuse the micro and make it do what we
+want. That's the secret, go get a debugger, a compiler, and all the tools you
+think you'll need, and find out what's the data after <code>buf</code> and why
+it's so important to be able to modify it.
+
+<p>
+1 - argc and argv are just names for main's arguments, they just name chunks of bits in memory, their names are not meaningful by their own but for their context.<p>
+</font>
+</td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=stack5.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=abo2.html>Next</A>}</font></td></tr></font></table>
+</body>

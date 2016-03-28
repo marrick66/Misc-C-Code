@@ -1,0 +1,37 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>Advanced Buffer Overflow #5</b></center>
+<br>
+ch-ch-ch-changes<p>
+<font size=-1>
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=abo5.c>abo5.c</a>                                       *
+ * specially crafted to feed your brain by gera */
+
+/* You take the blue pill, you wake up in your bed,    *
+ *     and you believe what you want to believe        *
+ * You take the red pill,                              *
+ *     and I'll show you how deep goes the rabbit hole */
+
+int main(int argv,char **argc) {
+	char *pbuf=malloc(strlen(argc[2])+1);
+	char buf[256];
+
+	strcpy(buf,argc[1]);
+	for (;*pbuf++=*(argc[2]++););
+	exit(1);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+Use your sixth sense, will you be able to gain control given the possibility of
+writing wherever you wish in memory?
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=abo4.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=abo6.html>Next</A>}</font></td></tr></font></table>
+</body>

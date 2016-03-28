@@ -1,0 +1,41 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>Advanced Buffer Overflow #3</b></center>
+<br>
+microprocessor ownership <p>
+<font size=-1>
+How to make the microprocessor make what you want? Who owns the Instruction
+Pointer, owns the execution flow, and that's what we need. All bytes are
+composed of bits, but some of them are just numbers, and some of them are
+addresses to code. Jump! Geronimoooooooooo...
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=abo3.c>abo3.c</a>                                       *
+ * specially crafted to feed your brain by gera */
+
+/* This'll prepare you for The Next Step        */
+
+int main(int argv,char **argc) {
+	extern system,puts; 
+	void (*fn)(char*)=(void(*)(char*))&system;
+	char buf[256];
+
+	fn=(void(*)(char*))&puts;
+	strcpy(buf,argc[1]);
+	fn(argc[2]);
+	exit(1);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+<code>buf</code> is in the stack, and after it are some bits you can change,
+that you've learnt in abo1.<p>
+In case you wonder why we put that there, is so the linker doesn't remove it.
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=abo2.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=abo4.html>Next</A>}</font></td></tr></font></table>
+</body>

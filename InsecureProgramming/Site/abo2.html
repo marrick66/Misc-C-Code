@@ -1,0 +1,39 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>Advanced Buffer Overflow #2</b></center>
+<br>
+execution flow <p>
+<font size=-1>
+Did you get the previous abo? Is the key to it overwriting sensible data
+or something else? Again, it is important to know who will read the data,
+and how will it be interpreted. 
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=abo2.c>abo2.c</a>                                       *
+ * specially crafted to feed your brain by gera */
+
+/* This is a tricky example to make you think   *
+ * and give you some help on the next one       */
+
+int main(int argv,char **argc) {
+	char buf[256];
+
+	strcpy(buf,argc[1]);
+	exit(1);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+In this new abo, as you can see, we added an <code>exit()</code>. Go and find
+out what's the difference, what new possibilities this <code>exit()</code> adds,
+or what constrains it puts on the exploitation of the buffer overflow... good
+luck, take your time, and keep thinking until you are absolutly sure of what you
+think...
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=abo1.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=abo3.html>Next</A>}</font></td></tr></font></table>
+</body>

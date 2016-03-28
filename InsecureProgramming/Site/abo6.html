@@ -1,0 +1,32 @@
+<body bgColor=White>
+<table width=80%><tr><td>
+<center><b>Advanced Buffer Overflow #6</b></center>
+<br>
+<p>
+<font size=-1>
+</font>
+<p>
+<table cellspacing=0 cellpadding=10 border=1><tr><td>
+<pre><font color=#108010>
+/* <A HRef=abo6.c>abo6.c</a>                                       *
+/* specially crafted to feed your brain by gera */
+
+/* wwwhat'u talkin' about? */
+
+int main(int argv,char **argc) {
+	char *pbuf=malloc(strlen(argc[2])+1);
+	char buf[256];
+
+	strcpy(buf,argc[1]);
+	strcpy(pbuf,argc[2]);
+	while(1);
+}
+</font></pre>
+</td></tr></table>
+<br><font size=-1>
+</font></td></tr></table>
+<table width=80%>
+<tr><td align=left><font size=-1>{<A HRef=abo5.html><U>Previous</U></A>}</font></td>
+<td align=center><font size=-1>{<A HRef=.>index</A>}</font></td>
+<td align=right><font size=-1>{<A HRef=abo7.html>Next</A>}</font></td></tr></font></table>
+</body>
