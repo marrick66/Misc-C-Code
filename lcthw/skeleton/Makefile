@@ -61,7 +61,7 @@ clean:
 	rm -rf build $(OBJECTS) $(TESTS)
 	rm -f tests/tests.log
 	find . -name "*.gc*" -exec rm {} \;
-	rm -rf `find . -name "*.dSYM" -print
+	rm -rf `find . -name "*.dSYM" -print`
 
 #Installation:
 install: all
@@ -71,6 +71,5 @@ install: all
 #Check for the use of unsafe functions:
 check:
 	@echo Files with potientially dangerous functions:
-	@egrep '[^_.>a-zA-Z0-9](str(n?cpy|n?cat|xfrm|n?dup|str|pbrk|tok|_)\
-		|stpn?cpy|a?sn?printf|byte_)' $(SOURCES) || true
+	@egrep '[^_.>a-zA-Z0-9](str(n?cpy|n?cat|xfrm|n?dup|str|pbrk|tok|_)|stpn?cpy|a?sn?printf|byte_)' $(SOURCES) || true
 
